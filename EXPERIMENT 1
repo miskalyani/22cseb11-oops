@@ -1,0 +1,214 @@
+                                                                EXPERIMENT 1 
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package javaapplication11;
+
+/**
+ *
+ * @author test02
+ */
+import java.util.*;
+public class JavaApplication11 {
+
+    /**
+     * @param args the command line arguments
+     */
+   
+    public static void main(String[] args) {
+        int marks;
+        System.out.println("Enter your marks out of 10:");
+        Scanner obj = new Scanner(System.in);
+        marks=obj.nextInt();
+        switch(marks)
+        {
+            case 10:
+                System.out.println("Excellent");
+                break;
+            case 9:
+            case 8:
+                System.out.println("Very Good");
+                break;
+            case 7:
+            case 6:
+                System.out.println("Good");
+                break;
+            case 5:
+            case 4:
+            case 3:
+                System.out.println("Poor");
+                break;
+            case 2:
+            case 1:
+            case 0:
+                System.out.println("Very Poor");
+                break;
+            default:
+                System.out.println("Invalid input");
+                break;
+                
+             
+                
+        }
+        // TODO code application logic here
+    }
+    
+}*/
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javaapplication10;
+import java.util.Scanner;
+
+/**
+ *
+ * @author Administrator
+ */
+public class JavaApplication10 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic
+        int n;
+        Scanner obj=new Scanner(System.in);
+        System.out.print("Enter the number of elements:");
+        n=obj.nextInt();
+        int[]numbers =new int[10];
+        System.out.println("enter the elements:");
+        for(int i=0;i<n;i++)
+        {
+            numbers[i]=obj.nextInt();
+        }
+        int smallest = numbers[0];
+        int largest = numbers[0];
+        for(int i=0;i<n;i++)
+        {
+            if(numbers[i]>largest)
+                largest=numbers[i];
+            else if(numbers[i]<smallest)
+                smallest=numbers[i];
+        }
+        System.out.println("largest number is :"+largest);
+        System.out.println("smallest number is :"+smallest);
+    }
+        }
+    }
+   
+}*/
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javaapplication11;
+
+/**
+ *
+ * @author test02
+ */
+import java.util.*;
+public class NewClass {
+    public static void main(String[] args) {
+        int i,j,rows;
+        Scanner obj= new Scanner(System.in);
+        System.out.println("Enter no. of Rows:");
+        rows= obj.nextInt();
+        System.out.println("This is the pattern of "+rows+" Rows");
+        for(i=1;i<=rows;i++)
+        {
+            for(j=rows;j>=i;j--)
+            {
+                System.out.print(j+" ");
+            }
+        System.out.println();
+        }
+    }
+    
+}
+package javaapplication11;
+
+/**
+ *
+ * @author test02
+ */
+import java.util.*;
+public class NewClass1 {
+    public static void main(String[] args) {
+        int a,b,c;
+        Scanner obj= new Scanner(System.in);
+        System.out.println("Enter a :");
+        a= obj.nextInt();
+        System.out.println("Enter b :");
+        b= obj.nextInt();
+        System.out.println("Before Swapping a= "+a+" b= "+b);
+        c=a;
+        a=b;
+        b=c;
+        System.out.println("After Swapping a= "+a+" b= "+b);
+    }
+    
+}
+*/
+package javaapplication2;
+
+import java.util.*;
+public class Sample1 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        int lowerLimit = 101; // Starting from 101 to exclude 100
+        int upperLimit = 200;
+        int divisor = 7;
+        int sum = 0;
+
+        for (int num = lowerLimit; num < upperLimit; num++) {
+            if (num % divisor == 0) {
+                sum += num;
+            }
+        }
+        // TODO code application logic here
+        System.out.println("Sum of numbers divisible by " + divisor + " between " + lowerLimit + " and " + upperLimit + " is: " + sum);
+    }
+   
+}
+package javaapplication11;
+
+/**
+ *
+ * @author test02
+ */
+import java.util.*;
+public class NewClass2 {
+    public static void main(String[] args){
+        int l,h,d,i,s=0;
+        Scanner obj= new Scanner(System.in);
+        System.out.println("Enter lower number :");
+        l= obj.nextInt();
+        System.out.println("Enter upper number :");
+        h= obj.nextInt();
+        System.out.println("Enter divisor :");
+        d= obj.nextInt();
+        System.out.println("Numbers between "+l+" and "+h+" divided by "+ d);
+        for(i=l;i<=h;i++)
+        {
+            if(i%d==0){
+                System.out.print(i+" ");
+                s+=i;
+            }
+        }
+        System.out.println();
+        System.out.println("The sum is: "+s);
+    }
+    
+}
+
