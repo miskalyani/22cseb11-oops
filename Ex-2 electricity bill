@@ -1,0 +1,70 @@
+
+class Consumer {
+    int consumerNumber;
+    String consumerName;
+    int prevMonthReading;
+    int currMonthReading;
+    String ebType;
+
+    Consumer(int num, String name, int prev, int curr, String type) {
+        consumerNumber = num;
+        consumerName = name;
+        prevMonthReading = prev;
+        currMonthReading = curr;
+        ebType = type;
+    }
+
+    double calculateBill() {
+        int unitsConsumed = currMonthReading - prevMonthReading;
+        double billAmount = 0;
+
+        if (ebType.equalsIgnoreCase("domestic")) {
+            if (unitsConsumed <= 100) {
+                billAmount = unitsConsumed * 1.50;
+            } else if (unitsConsumed <= 200) {
+                billAmount = 100 * 1.50 + (unitsConsumed - 100) * 3;
+            } else if (unitsConsumed <= 500) {
+                billAmount = 100 * 1.50 + 100 * 3 + (unitsConsumed - 200) * 4.50;
+            } else {
+                billAmount = 100 * 1.50 + 100 * 3 + 300 * 4.50 + (unitsConsumed - 500) * 7;
+            }
+        } else if (ebType.equalsIgnoreCase("commercial")) {
+            if (unitsConsumed <= 100) {
+                billAmount = unitsConsumed * 2.50;
+            } else if (unitsConsumed <= 200) {
+                billAmount = 100 * 2.50 + (unitsConsumed - 100) * 5;
+            } else if (unitsConsumed <= 500) {
+                billAmount = 100 * 2.50 + 100 * 5 + (unitsConsumed - 200) * 6.50;
+            } else {
+                billAmount = 100 * 2.50 + 100 * 5 + 300 * 6.50 + (unitsConsumed - 500) * 9;
+            }
+        }
+
+        return billAmount;
+    }
+}
+OUTPUT 
+Enter the number of consumers: 2
+Enter details for consumer 1:
+Consumer Number: 15
+Consumer Name: AAA
+Previous Month Reading: 140
+Current Month Reading: 500
+Type of EB Connection (domestic/commercial): domestic
+Enter details for consumer 2:
+Consumer Number: 16
+Consumer Name: bbb
+Previous Month Reading: 340
+Current Month Reading: 200
+Type of EB Connection (domestic/commercial): commercial
+
+Electricity Bill Details:
+Consumer 15:
+Name: AAA
+Bill Amount: Rs. 1170.0
+--------------------
+Consumer 16:
+Name: bbb
+Bill Amount: Rs. -350.0
+--------------------
+BUILD SUCCESSFUL (total time: 1 minute 16 seconds)
