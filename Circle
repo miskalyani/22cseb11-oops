@@ -1,0 +1,63 @@
+package circle;
+import java.util.*;
+/**
+ *
+ * @author 22cseb17
+ */
+public class Circle {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+     circles c=new circles();
+     System.out.print("colour :");
+     System.out.println(c.colour);
+     circles c1=new circles(1.0);
+     System.out.print("radius :");
+     System.out.println(c1.radius);
+     c.getradius();
+     c.getarea();    
+    }
+   
+}
+class circles
+{
+    double radius;
+    String colour;
+    circles(){
+         radius=1.0;
+         colour="red";
+    }
+    circles(double r){
+        radius =r;
+    }
+    void getradius()
+    {
+        System.out.println("enter the radius of the circle :");
+        Scanner obj=new Scanner(System.in);
+        radius=obj.nextDouble();
+        System.out.println("radius"+radius);        
+    }
+    void getarea(){
+        double area=3.14*radius*radius;
+        System.out.println("area="+area);
+    }
+}
+
+OUTPUT
+run
+
+colour:red
+
+radius:1.0
+
+enter the radius of the circle
+5
+
+radius5.0
+
+area=78.5
+
+BUILD SUCCESSFUL
