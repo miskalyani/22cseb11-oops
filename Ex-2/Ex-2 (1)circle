@@ -1,0 +1,47 @@
+package javaapplication11;
+
+/**
+ *
+ * @author test02
+ */
+import java.util.*;
+public class NewClass2 {
+    public static void main(String[] args){
+        int l,h,d,i,s=0;
+        Scanner obj= new Scanner(System.in);
+        System.out.println("Enter lower number :");
+        l= obj.nextInt();
+        System.out.println("Enter upper number :");
+        h= obj.nextInt();
+        System.out.println("Enter divisor :");
+        d= obj.nextInt();
+        System.out.println("Numbers between "+l+" and "+h+" divided by "+ d);
+        for(i=l;i<=h;i++)
+        {
+            if(i%d==0){
+                System.out.print(i+" ");
+                s+=i;
+            }
+        }
+        System.out.println();
+        System.out.println("The sum is: "+s);
+    }
+    
+}
+
+
+OUTPUT 
+run
+
+colour:red
+
+radius:1.0
+
+enter the radius of the circle
+5
+
+radius5.0
+
+area=78.5
+
+BUILD SUCCESSFUL
