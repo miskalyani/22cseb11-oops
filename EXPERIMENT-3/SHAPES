@@ -1,0 +1,59 @@
+import java.util.Scanner;
+
+class Shape {
+    public double calculateArea() {
+        return 0.0;
+    }
+}
+
+class Circle extends Shape {
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+}
+
+class Rectangle extends Shape {
+    private double width;
+    private double height;
+
+    public Rectangle(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    @Override
+    public double calculateArea() {
+        return width * height; // Area of a rectangle: width * height
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the radius of the Circle: ");
+        double circleRadius = scanner.nextDouble();
+        Circle circle = new Circle(circleRadius);
+
+        System.out.print("Enter the width of the Rectangle: ");
+        double rectangleWidth = scanner.nextDouble();
+
+        System.out.print("Enter the height of the Rectangle: ");
+        double rectangleHeight = scanner.nextDouble();
+        Rectangle rectangle = new Rectangle(rectangleWidth, rectangleHeight);
+
+        System.out.println("Area of the Circle: " + circle.calculateArea());
+        System.out.println("Area of the Rectangle: " + rectangle.calculateArea());
+
+        // Close the scanner when done to prevent resource leak
+        scanner.close();
+    }
+}
+
