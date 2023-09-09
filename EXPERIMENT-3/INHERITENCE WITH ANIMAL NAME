@@ -87,4 +87,18 @@ public class Main {
         dog1.greets(dog2);
     }
 }
-
+OUTPUT 
+Enter the Cat name:
+kitty
+Enter the Dog1 name:
+doggo
+Enter the Dog2 name:
+spikey
+Animal: Generic Animal
+Mammal: Animal: Generic Mammal
+Cat: Mammal: Animal: kitty
+Dog: Mammal: Animal: doggo
+Dog: Mammal: Animal: spikey
+ Meow
+ Woof
+Woooof
