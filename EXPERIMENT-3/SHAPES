@@ -56,4 +56,9 @@ public class Main {
         scanner.close();
     }
 }
-
+output
+Enter the radius of the Circle: 3
+Enter the width of the Rectangle: 1
+Enter the height of the Rectangle: 5
+Area of the Circle: 28.274333882308138
+Area of the Rectangle: 5.0
