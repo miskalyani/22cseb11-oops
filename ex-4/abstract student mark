@@ -1,0 +1,70 @@
+STUDENT MARK CALCULATION USING ABSTRACT 
+
+package javaapplication2;
+
+
+/**
+ *
+ * @author 22cseb11
+ */
+public class NewClass {
+    public static void  main(String[]args ){
+        
+    
+    A student1=new A(88,99,100);
+    B student2=new B(99,89,100,98);
+    System.out.println("student1 mark" + student1.percentage()+"%");
+    System.out.println("student2 mark" + student2.percentage()+"%");
+    }
+
+    
+    
+}
+abstract class Marks
+{
+   public abstract double percentage();
+}
+class A extends Marks
+{
+ private int mark1, mark2, mark3;
+ public A(int mark1, int  mark2, int mark3)
+ {
+     this.mark1=mark1;
+     this.mark2=mark2;
+     this.mark3=mark3;
+ }
+ 
+ @Override
+  public double percentage()
+         {
+             double total=mark1+mark2+mark3;
+             
+             return (total/300)*100;
+             
+         }
+}
+class B extends Marks
+{
+    private int mark1,mark2, mark3,mark4;
+    public B(int mark1,int mark2,int mark3,int mark4)
+    {
+            
+        this.mark1=mark1;
+        this.mark2=mark2;
+        this.mark3=mark3;
+        this.mark4=mark4;
+    }
+    @Override
+    public double percentage()
+    {
+        double total=(mark1+mark2+mark3+mark4);
+        return (total/400)*100;
+    }
+    
+}
+
+OUTPUT 
+student1 mark95.66666666666667%
+student2 mark96.5%
+
+
