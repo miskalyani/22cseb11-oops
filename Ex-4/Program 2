@@ -1,0 +1,85 @@
+Define the QueueOperations interface
+interface QueueOperations {
+    void enqueue(int item);
+    int dequeue();
+    boolean isEmpty();
+    boolean isFull();
+}
+
+// Implement the QueueOperations interface in the MyQueue class
+class MyQueue implements QueueOperations {
+    private int maxSize;
+    private int[] queueArray;
+    private int front;
+    private int rear;
+
+    // Constructor to initialize the queue
+    public MyQueue(int size) {
+        maxSize = size;
+        queueArray = new int[maxSize];
+        front = 0;
+        rear = -1;
+    }
+
+    // Method to add an item to the queue (enqueue)
+    @Override
+    public void enqueue(int item) {
+        if (isFull()) {
+            System.out.println("Queue is full. Cannot enqueue.");
+        } else {
+            queueArray[++rear] = item;
+        }
+    }
+
+    // Method to remove an item from the queue (dequeue)
+    @Override
+    public int dequeue() {
+        if (isEmpty()) {
+            System.out.println("Queue is empty. Cannot dequeue.");
+            return -1; // Return a sentinel value indicating an empty queue
+        } else {
+            int item = queueArray[front++];
+            if (front > rear) {
+                front = 0;
+                rear = -1;
+            }
+            return item;
+        }
+    }
+
+    // Method to check if the queue is empty
+    @Override
+    public boolean isEmpty() {
+        return rear == -1;
+    }
+
+    // Method to check if the queue is full
+    @Override
+    public boolean isFull() {
+        return rear == maxSize - 1;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MyQueue queue = new MyQueue(5); // Create a queue with a maximum size of 5
+
+        queue.enqueue(10);
+        queue.enqueue(20);
+        queue.enqueue(30);
+
+        System.out.println("Dequeue: " + queue.dequeue()); // Dequeue an item
+
+        queue.enqueue(40);
+        queue.enqueue(50);
+
+        System.out.println("Is the queue empty? " + queue.isEmpty()); // Check if the queue is empty
+        System.out.println("Is the queue full? " + queue.isFull()); // Check if the queue is full
+    }
+}
+
+
+OUTPUT:
+Dequeue: 10
+Is the queue empty? false
+Is the queue full? true
