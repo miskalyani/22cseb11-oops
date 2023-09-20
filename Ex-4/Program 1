@@ -1,0 +1,52 @@
+abstract class Marks {
+    abstract double getPercentage();
+}
+
+class A extends Marks {
+    double subject1, subject2, subject3;
+
+    public A(double subject1, double subject2, double subject3) {
+        this.subject1 = subject1;
+        this.subject2 = subject2;
+        this.subject3 = subject3;
+    }
+
+    @Override
+    double getPercentage() {
+        double totalMarks = subject1 + subject2 + subject3;
+        return (totalMarks / 300) * 100;
+    }
+}
+
+class B extends Marks {
+    double subject1, subject2, subject3, subject4;
+
+    public B(double subject1, double subject2, double subject3, double subject4) {
+        this.subject1 = subject1;
+        this.subject2 = subject2;
+        this.subject3 = subject3;
+        this.subject4 = subject4;
+    }
+
+    @Override
+    double getPercentage() {
+        double totalMarks = subject1 + subject2 + subject3 + subject4;
+        return (totalMarks / 400) * 100;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        A studentA = new A(80, 90, 85);
+        B studentB = new B(75, 85, 90, 88);
+
+        double percentageA = studentA.getPercentage();
+        double percentageB = studentB.getPercentage();
+
+        System.out.println("Student A Percentage: " + percentageA + "%");
+        System.out.println("Student B Percentage: " + percentageB + "%");
+    }
+}
+Output 
+Student A Percentage: 85.0%
+Student B Percentage: 84.5%
