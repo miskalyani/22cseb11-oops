@@ -1,0 +1,71 @@
+Create a DataEntryException class whose getMessage() method returns information about invalid
+integer data. Write a program named GetIDAndAge that continually prompts the user for an ID
+number and an age until a terminal 0 is entered for both. Throw a DataEntryException if the ID is
+not in the range of valid ID numbers (0 through 999), or if the age is not in the range of valid ages
+(0 through 119). Catch any DataEntryException or InputMismatchException that is thrown, and
+display an appropriate message. Save the files as DataEntryException.java and
+GetIDAndAge.java.
+
+
+
+
+package javaapplication3;
+
+import java.util.Scanner;
+class DataEntryException extends Exception
+{
+    DataEntryException(String msg)
+{
+      super(msg);  
+}
+}
+
+public class GetIdAndAge {
+    public static void main(String []args){
+        Scanner obj=new Scanner (System.in);
+        System.out.println("enter i : ");
+        int i;
+        i = obj.nextInt();
+        while(i!=0){
+            System.out.println("enter id no.");
+            int id =obj.nextInt();
+            System.out.println("enter age :");
+            int age=obj.nextInt();
+            try{
+                if(id<0||id>999)
+                {
+                    throw new DataEntryException("invalid id");
+                }
+                if(age<0||age>119)
+                {
+                    throw new DataEntryException("invalid age");
+                }
+                
+            
+        }
+
+            catch(DataEntryException e)
+            {
+                
+                System.out.println(e);
+            }
+            System.out.println("Enter i (0 to exit): ");
+            i = obj.nextInt();
+
+        
+    }
+            
+    
+}
+}
+OUTPUT:
+enter i : 
+1000
+enter id no.
+20
+enter age :
+200
+javaapplication3.DataEntryException: invalid age
+Enter i (0 to exit): 
+0
+BUILD SUCCESSFUL (total time: 37 seconds)
